@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-LABEL org.label-schema.license="GPL-2.0" \
+LABEL org.label-schema.license="GPL-3.0" \
       org.label-schema.vcs-url="https://github.com/chain-ed-reaction/r-nlogo" \
       org.label-schema.vendor="BEE Lab" \
       maintainer="Bevan Stanely <bevanstanely@outlook.com>"
