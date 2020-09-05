@@ -22,10 +22,13 @@ RUN apt-get update \
         libproj-dev \
 		libgeos-dev \
         openjdk-11-jre-headless \
- 	&& R -e "install.packages('nlrx')" \
+ 	&& apt-get clean
+
+# Install R packages
+
+RUN R -e "install.packages('nlrx')" \
  	&& rm -rf /tmp/Rtmp* /tmp/*.rds \
  	&& rm -rf /var/lib/apt/lists/* \
- 	&& apt-get clean
 
 WORKDIR project/
 
