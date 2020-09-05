@@ -36,8 +36,7 @@ apt-get remove --purge -y \
 	libudunits2-dev \
 	libgdal-dev \
 	libproj-dev \
-	libgeos-dev \
-	libzmq3-dev
+	libgeos-dev
 apt-get autoremove -y
 apt-get autoclean -y
 rm -rf /var/lib/apt/lists/*
