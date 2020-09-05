@@ -20,8 +20,8 @@ RUN apt-get update \
         libudunits2-dev \
         libgdal-dev \
         libproj-dev \
-		libgeos-dev \
-		libzmq3-dev \
+        libgeos-dev \
+        libzmq3-dev \
         openjdk-11-jre-headless \
  	&& apt-get clean
 
@@ -31,10 +31,9 @@ RUN R -e "install.packages(c('nlrx', 'clustermq'))" \
  	&& rm -rf /tmp/* \
  	&& apt-get remove --purge -y \
  		software-properties-common \
- 		wget \
  		libudunits2-dev \
-        libgdal-dev \
-        libproj-dev \
+ 		libgdal-dev \
+ 		libproj-dev \
 		libgeos-dev \
 		libzmq3-dev \
  	&& apt-get autoremove -y \
