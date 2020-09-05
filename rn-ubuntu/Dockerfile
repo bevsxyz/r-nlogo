@@ -13,6 +13,6 @@ COPY scripts /project/scripts
 
 # Install NetLogo
 
-RUN /project/scripts/install.sh
+RUN ./scripts/install.sh
 
 CMD ["bash"]
