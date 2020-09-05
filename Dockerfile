@@ -9,7 +9,7 @@ LABEL org.label-schema.license="GPL-3.0" \
       
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
-		make \
+		software-properties-common \
 		wget \
     && add-apt-repository --enable-source --yes "ppa:marutter/rrutter4.0" \
     && add-apt-repository --enable-source --yes "ppa:c2d4u.team/c2d4u4.0+" \
@@ -30,6 +30,7 @@ RUN apt-get update \
 RUN R -e "install.packages(c('nlrx', 'clustermq'))" \
  	&& rm -rf /tmp/* \
  	&& apt-get remove --purge -y \
+ 		wget \
  		libudunits2-dev \
         libgdal-dev \
         libproj-dev \
