@@ -26,7 +26,7 @@ RUN apt-get update \
 
 # Install R packages
 
-RUN R -e "install.packages('nlrx')" \
+RUN R -e "install.packages(c('nlrx', 'future', 'clustermq'))" \
  	&& rm -rf /tmp/Rtmp* /tmp/*.rds \
  	&& rm -rf /var/lib/apt/lists/* \
 
