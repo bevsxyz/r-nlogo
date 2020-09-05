@@ -30,6 +30,7 @@ RUN apt-get update \
 RUN R -e "install.packages(c('nlrx', 'clustermq'))" \
  	&& rm -rf /tmp/* \
  	&& apt-get remove --purge -y \
+ 		software-properties-common \
  		wget \
  		libudunits2-dev \
         libgdal-dev \
