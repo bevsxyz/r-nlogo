@@ -21,14 +21,15 @@ RUN apt-get update \
         libgdal-dev \
         libproj-dev \
 		libgeos-dev \
+		libzmq3-dev \
         openjdk-11-jre-headless \
  	&& apt-get clean
 
 # Install R packages
 
-RUN R -e "install.packages(c('nlrx', 'future', 'clustermq'))" \
+RUN R -e "install.packages(c('nlrx', 'clustermq'))" \
  	&& rm -rf /tmp/Rtmp* /tmp/*.rds \
- 	&& rm -rf /var/lib/apt/lists/* \
+ 	&& rm -rf /var/lib/apt/lists/*
 
 WORKDIR project/
 
