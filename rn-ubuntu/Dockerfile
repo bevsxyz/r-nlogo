@@ -5,7 +5,7 @@ LABEL org.label-schema.license="GPL-3.0" \
       org.label-schema.vendor="BEE Lab" \
       maintainer="Bevan Stanely <bevanstanely@outlook.com>"
 
-ARG DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 ENV NETLOGO_VERSION=6.1.1
 ENV R_BASE_VERSION=4.0.2-1.2004.0
 
