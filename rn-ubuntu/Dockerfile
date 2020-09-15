@@ -20,7 +20,7 @@ RUN apt-get update \
 
 # Install NetLogo
 
-RUN wget -c https://ccl.northwestern.edu/netlogo/${NETLOGO_VERSION}/NetLogo-${NETLOGO_VERSION}-64.tgz -O - \
+RUN wget -cq https://ccl.northwestern.edu/netlogo/${NETLOGO_VERSION}/NetLogo-${NETLOGO_VERSION}-64.tgz -O - \
 	&& tar -xz NetLogo-${NETLOGO_VERSION}-64.tgz \
 	&& rm NetLogo-${NETLOGO_VERSION}-64.tgz
 
