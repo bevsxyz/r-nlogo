@@ -20,9 +20,7 @@ RUN apt-get update \
 
 # Install NetLogo
 
-RUN wget -q https://ccl.northwestern.edu/netlogo/${NETLOGO_VERSION}/NetLogo-${NETLOGO_VERSION}-64.tgz \
-	&& tar -xzf NetLogo-${NETLOGO_VERSION}-64.tgz \
-	&& rm NetLogo-${NETLOGO_VERSION}-64.tgz
+RUN wget -q https://ccl.northwestern.edu/netlogo/${NETLOGO_VERSION}/NetLogo-${NETLOGO_VERSION}-64.tgz | tar -xz
 
 RUN add-apt-repository --enable-source --yes "ppa:marutter/rrutter4.0" \
 	&& add-apt-repository --enable-source --yes "ppa:c2d4u.team/c2d4u4.0+" \
