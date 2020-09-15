@@ -6,7 +6,7 @@ LABEL org.label-schema.license="GPL-3.0" \
       maintainer="Bevan Stanely <bevanstanely@outlook.com>"
 
 ENV NETLOGO_VERSION=6.1.1
-ENV R_BASE_VERSION=4.0.2-\*
+ENV R_BASE_VERSION=4.0.2-1.2004.0
 
 WORKDIR project/
 
@@ -16,6 +16,9 @@ RUN apt-get update \
 		software-properties-common \
 		openjdk-11-jre-headless \
 		wget
+	&& echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+	&& locale-gen en_US.utf8 \
+	&& /usr/sbin/update-locale LANG=en_US.UTF-8
 
 # Install NetLogo
 
@@ -27,7 +30,7 @@ RUN add-apt-repository --enable-source --yes "ppa:marutter/rrutter4.0" \
 	&& add-apt-repository --enable-source --yes "ppa:c2d4u.team/c2d4u4.0+" \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends \
-		r-base=${R_BASE_VERSION}  \
+		r-base=${R_BASE_VERSION} \
 		r-base-dev=${R_BASE_VERSION} \
 		libudunits2-dev \
 		libgdal-dev \
