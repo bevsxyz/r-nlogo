@@ -5,7 +5,7 @@ LABEL org.label-schema.license="GPL-3.0" \
       org.label-schema.vendor="BEE Lab" \
       maintainer="Bevan Stanely <bevanstanely@outlook.com>"
 
-ENV DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND noninteractive
 ENV NETLOGO_VERSION=6.1.1
 ENV R_BASE_VERSION=4.0.2-1.2004.0
 
@@ -16,10 +16,7 @@ RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
 		software-properties-common \
 		openjdk-11-jre-headless \
-		wget \
-	&& echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
-	&& locale-gen en_US.utf8 \
-	&& /usr/sbin/update-locale LANG=en_US.UTF-8
+		wget
 
 # Install NetLogo
 
